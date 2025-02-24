@@ -12,9 +12,9 @@ cards:
         ha-card {
           border: none;
           {% if state_attr('climate.better_thermostat', 'hvac_action') == 'heating' %}
-          animation: breathing-shadow 1.5s infinite alternate ease-in-out;
+            animation: breathing-shadow 1.5s infinite alternate ease-in-out;
           {% else %}
-          animation: none;
+            animation: none;
           {% endif %}
         }
 
@@ -33,7 +33,8 @@ cards:
           🌡️ {{
           states("sensor.living_room_temperature_humidity_sensor_temperature") }} °C
           💧 {{ states("sensor.living_room_temperature_humidity_sensor_humidity") }}
-          %        icon: mdi:sofa
+          %
+        icon: mdi:sofa
         entity: light.living_room_lights
         icon_color: '{{ state_attr(entity, "rgb_color")}}'
         badge_icon: |
